@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "primary";
+    src: url("../assets/font-1.woff2");
+}
+
+@font-face {
+    font-family: "secondary";
+    src: url("../assets/font-2.woff2");
+}
+
+
+.background {
+    z-index: 20;
+    background: url("../media/background_hero.avif");
+    background-attachment: scroll;
+}
+
+@media screen and (max-width: 1024px) {
+    .background {
+        background-position: 65% 40%;
+    }
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.bg1 {
+    background: url("../media/chicken.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg2 {
+    background: url("../media/2.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg3 {
+    background: url("../media/frenchfries.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
