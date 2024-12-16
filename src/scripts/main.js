@@ -3,16 +3,17 @@ import 'remixicon/fonts/remixicon.css'
 const menuCheckbox = document.getElementById('menu');
 const menuLabel = document.querySelector('.menu-label');
 const mobileMenu = document.querySelector('.mobile-menu');
+const menuLines = document.querySelectorAll('.menu-line');
 
 function toggleMenu() {
 
     if (menuCheckbox.checked) {
-        menuLabel.classList.add('ri-close-line');
-        menuLabel.classList.remove('ri-menu-line');
+        menuLines[0].style.transform = 'rotate(55deg) translateX(5px) ';
+        menuLines[1].style.transform = 'rotate(-55deg) translateX(5px) ';
         mobileMenu.classList.remove('hidden');
     } else {
-        menuLabel.classList.add('ri-menu-line');
-        menuLabel.classList.remove('ri-close-line');
+        menuLines[0].style.transform = '';
+        menuLines[1].style.transform = '';
         mobileMenu.classList.add('hidden');
     }
 }

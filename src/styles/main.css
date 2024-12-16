@@ -80,3 +80,25 @@ body {
         opacity: 1;
     }
 }
+
+.menu-label-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #DD2803;
+    transition: transform 0.3s ease;
+}
+
+#menu:checked ~ .mobile-menu .menu-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu:checked ~ .mobile-menu .menu-line:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
