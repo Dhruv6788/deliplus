@@ -12,6 +12,10 @@
     src: url("../assets/font-2.woff2");
 }
 
+body {
+    scroll-behavior: smooth;
+}
+
 
 .background {
     z-index: 20;
@@ -60,4 +64,19 @@
     background-repeat: no-repeat;
     background-size: 50vw 40vh;
     background-position: 20% 100%;
+}
+
+.fade-in {
+    scale: .8;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 250px 500px;
+}
+
+@keyframes fade-in {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }
