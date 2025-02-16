@@ -1,309 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deli Plus | Home</title>
-  <link rel="stylesheet" href="./src/styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deli Plus</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <main>
-
-    <div class="fixed z-[-20] w-screen h-screen">
-      <div class="absolute z-[-30] bg-[#FBE690] w-full h-full"></div>
-      <div class="background w-screen h-screen"></div>
+    <div class="navbar">
+        <div class="nav-left">
+            <img src="./src/assets/images/logo.svg" alt="">
+        </div>
+        <div class="nav-right">
+            <li><a class="link active" href="/">Home</a></li>
+            <li><a class="link" href="#">Menu</a></li>
+            <li><a class="link" href="#">Gallery</a></li>
+            <li><a class="link" href="#">Contact</a></li>
+        </div>
+        <div class="nav-mobile-right">
+            <button>
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
     </div>
 
-    <nav class="bg-[#FBE690] top-0 fixed w-screen px-10 z-[30] flex justify-between items-center gap-5">
-      <div class="w-1/2 flex justify-start md:px-20 items-center h-24">
-        <img src="./src/media/DeliPlus.svg" class="md:scale-[4] scale-[4]" alt="Deli Plus">
-      </div>
-      <div class="hidden md:flex">
-        <ul class="flex gap-10 text-[#000000]">
-          <li><a href="#" class="font-extralight text-lg font-[primary] hover:text-[#DD2803]">Home</a></li>
-          <li><a href="#" class="font-extralight text-lg font-[primary] hover:text-[#DD2803]">Menu</a></li>
-          <li><a href="#" class="font-extralight text-lg font-[primary] hover:text-[#DD2803]">Gallery</a></li>
-          <li><a href="#" class="font-extralight text-lg font-[primary] hover:text-[#DD2803]">Contact</a></li>
-      </div>
-      <div class="md:hidden">
-        <!-- <label for="menu" class="menu-label ri-menu-line text-[#DD2803] text-2xl cursor-pointer"></label> -->
-        <label for="menu" class="cursor-pointer menu-label">
-          <span class="menu-label-container">
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-          </span>
-        </label>
-        <input class="hidden" type="checkbox" name="menu" id="menu">
+    <a href="#home" class="click-to-top">
+            <i class="ri-arrow-up-line"></i>
+    </a>
 
-        <div class="mobile-menu hidden absolute right-0 top-0 w-screen h-screen bg-[#ffffff] duration-[5s] z-[-1]">
-          <div class="w-full h-full flex justify-center items-center">
-            <ul class="flex flex-col gap-10 text-[#000000]">
-              <li><a href="#" class="tracking-wider font-semibold text-lg font-[primary] hover:text-[#DD2803]">Home</a></li>
-              <li><a href="#" class="tracking-wider font-semibold text-lg font-[primary] hover:text-[#DD2803]">Menu</a></li>
-              <li><a href="#" class="tracking-wider font-semibold text-lg font-[primary] hover:text-[#DD2803]">Gallery</a></li>
-              <li><a href="#" class="tracking-wider font-semibold text-lg font-[primary] hover:text-[#DD2803]">Contact</a></li>
-            </ul>
-            
-          </div>
-        </div>
+    <div class="loader">
+        <img src="./src/assets/images/logo.svg" alt="">
+        <div class="line"></div>
+    </div>
 
-      </div>
-    </nav>
-
-    <!-- Hero Section  -->
-    <section class="w-screen h-screen">
-      <div class="absolute z-[2] pt-20 px-6 bg-[rgb(0, 0, 0)] w-full">
-
-        <div class="w-full h-1/2 py-10 md:px-12 md:py-20">
-          <h3 class="text-xl md:text-[2.5rem] font-bold font-[secondary] tracking-wider text-black">OPEN FOR DELIVERY &
-            PICK UP</h3>
-          <h1
-            class=" md:mt-5 md:text-[6rem]  text-[3rem] leading-[8vh] tracking-wide font-[900] font-[secondary] text-[#DD2803]">
-            GET IT WHILE </h1>
-          <h1
-            class="md:mt-5 md:text-[6.5rem] mt-4 text-[3rem] tracking-wide font-[900] font-[secondary] text-[#DD2803]">IT'S HOT</h1>
-          <button
-            class="mt-5 md:mt-2 font-[primary] border border-[#DD2803] hover:bg-white duration-200 hover:text-[#DD2803] px-16 md:px-40 py-4 uppercase bg-[#DD2803] text-white">Order
-            Now</button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Delivery Section -->
-    <section class="w-screen py-20 bg-[#F9F2EA] z-[40]">
-      <div class="flex flex-col md:flex-row gap-5 justify-around items-center px-6">
-        <div class="w-full fade-in md:w-[22vw] px-2 py-10 flex flex-col items-center justify-center bg-white">
-          <img src="./src/media/mobile.svg" alt="">
-          <h3 class="text-header font-bold mt-5">Order On the GO</h3>
-          <p class="w-[80%] text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-            eligendi.</p>
-        </div>
-        <div class="w-full fade-in md:w-[22vw] px-2 py-10 flex flex-col items-center justify-center bg-white">
-          <img src="./src/media/scooter.svg" alt="">
-          <h3 class="text-header font-bold mt-5">DOORSTEP DELIVERY</h3>
-          <p class="w-[80%] text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-            eligendi.</p>
-        </div>
-        <div class="w-full fade-in md:w-[22vw] px-2 py-10 flex flex-col items-center justify-center bg-white">
-          <img src="./src/media/mobile.svg" alt="">
-          <h3 class="text-header font-bold mt-5">CURBSIDE PICKUP</h3>
-          <p class="w-[80%] text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-            eligendi.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ORIGINAL RECEIPE -->
-    <section class="w-screen h-[100vh] bg-[#F9F2EA]  flex gap-4 flex-col justify-center items-center font-[secondary]">
-      <h1 class="text-4xl md:text-7xl uppercase text-[#DD2803] font-extrabold">ORIGINAL RECEIPE</h1>
-      <h1 class="text-4xl md:text-7xl uppercase text-[#DD2803] font-extrabold">Since 1950</h1>
-    </section>
-
-    <!-- All Time Favorites -->
-    <section class="w-screen bg-white py-20">
-      <div class="w-full py-5 px-2 flex justify-center gap-5 items-center">
-        <img class="rotate-[10deg] w-12" src="./src/media/star.svg" alt="star">
-        <h1 class="font-[secondary] text-black text-xl md:text-4xl">ALL TIME FAVORITES</h1>
-        <img class="rotate-[10deg]" src="./src/media/star.svg" alt="star">
-      </div>
-
-      <div class="flex justify-center gap-24 flex-col items-center">
-
-        <div class="flex fade-in flex-col md:flex-row gap-20 justify-around items-center mt-16">
-          <div class="w-[20rem]  h-[20rem]  overflow-hidden flex flex-col items-center justify-center bg-white">
-            <div class="bg1 w-full h-[50vh] bg-red-100"></div>
-            <h3 class="text-header font-bold mt-5">CRISPY CHICKEN SANDWICH</h3>
-          </div>
-
-          <div class="w-[20rem] fade-in h-[20rem] overflow-hidden flex flex-col items-center justify-center bg-white">
-            <div class="bg2 w-full h-[50vh] bg-red-100"></div>
-            <h3 class="text-header font-bold mt-5">HOT & SPICY WINGS</h3>
-          </div>
-
-          <div class="w-[20rem] fade-in h-[20rem] overflow-hidden  flex flex-col items-center justify-center bg-white">
-            <div class="bg3 w-full h-[50vh] bg-red-100"></div>
-            <h3 class="text-header font-bold mt-5">FRENCH FRIES</h3>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="w-screen h-20 mt-10 flex justify-center items-center">
-        <button
-          class="border font-[primary] font-thin border-[#DD2803] hover:bg-white duration-200 hover:text-[#DD2803] px-12 py-3 uppercase bg-[#DD2803] text-white">Full
-          Menu</button>
-      </div>
-    </section>
-
-    <!-- SPECIAL OF THE WEEK -->
-    <section class="w-screen h-screen  flex justify-center items-center gap-10 bg-[#F9F2EA] md:px-20 md:py-20">
-
-      <div class="w-full h-full flex justify-around flex-col md:flex-row items-center">
-
-        <div class="w-full md:w-[50%] h-full bg-white py-14">
-
-          <div class="w-full flex justify-center items-center gap-5">
-            <img src="./src/media/star.svg" class="w-[2.5rem]" alt="star">
-            <h1 class="w-[50%] text-3xl md:text-4xl font-[secondary] uppercase text-black font-bold text-center">Special
-              of<span class="block uppercase">the week</span></h1>
-            <img src="./src/media/star.svg" class="w-[2.5rem]" alt="star">
-          </div>
-
-          <div class="w-full md:w-full flex flex-col justify-center mt-10 md:px-32">
-            <h1
-              class="text-xl px-10 tracking-wide md:text-xl text-center uppercase text-[#000000] font-extrabold font-[secondary]">
-              Your New Guilty pleasure
-            </h1>
-            <p class="text-center text-lg mt-7 font-normal px-10 font-[primary]">Indulge in our expertly crafted dish,
-              featuring fresh, locally sourced ingredients.</p>
-          </div>
-        </div>
-
-        <div class="w-full h-full fade-in md:w-1/2">
-          <img src="./src/media/special.avif" class="w-full h-full object-cover" alt="">
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- WE DELIVER -->
-    <section class=" w-screen md:h-[40rem] h-[50rem] flex justify-center items-center bg-white md:py-20 md:px-20">
-      <div class="border w-full h-full flex justify-center items-center bg-[#FBE690]">
-        <div class="w-full h-full delivery flex justify-end items-start">
-          <div class="md:w-[35%] w-full h-full flex flex-col justify-start items-center px-10">
-
-            <h1 class="text-4xl md:text-5xl mt-20 uppercase text-[#DD2803] font-extrabold font-[secondary]">WE DELIVER
-            </h1>
-            <p class="text-lg md:text-lg text-center mt-5 font-[secondary]">SATISFYING YOUR CRAVING JUST GOT EASIER</p>
-            <p class="text-lg mt-5 font-[primary] text-center font-medium">Order your favorite food from the comfort of
-              your own home and have it delivered to your doorstep. We've partnered with the best food delivery services
-              to ensure that your food is delivered hot and fresh.</p>
-            <div class="w-full flex justify-center mt-10">
-              <button
-                class="border font-[primary] font-thin border-[#DD2803] hover:bg-white duration-200 hover:text-[#DD2803] px-12 py-3 uppercase bg-[#DD2803] text-white">Order
-                Now</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION  -->
-    <section class="w-screen bg-[#F9F2EA] pb-20">
-
-      <div class="w-full flex flex-col md:flex-row justify-between">
-        <div class="md:w-[50%] w-full">
-          <div class="w-full px-16 py-10">
-            <h1 class="text-4xl text-center md:text-left font-[secondary] uppercase font-extrabold">Contact Us</h1>
-            <h1 class="mt-10 text-xl font-[secondary] text-center md:text-left uppercase font-medium">DROP US A LINE AND
-              WE'LL GET BACK TO YOU</h1>
-          </div>
-
-          <div class="w-full px-16">
-            <form action="w-full">
-              <div class="w-full mt-5 flex md:justify-between  items-center md:flex-row flex-col">
-                <div class="md:w-[40%] w-full flex flex-col">
-                  <label for="fname">First Name</label>
-                  <input class="w-full bg-transparent outline-none py-3 border-b border-[black]" type="text"
-                    name="fname">
+        <main>
+            <!-- Page 1 -->
+            <section id="home" class="home-section">
+                <div class="home-content">
+                    <div class="background">
+                        <img src="./src/assets/images/bg_sandwich.jpg" alt="background">
+                    </div>
+                    <div class="foreground">
+                        <div class="content">
+                            <div class="content-left">
+                                <p>Delicious Cafe</p>
+                                <h1>Sweet Treats</h1>
+                                <h1>Perfact Eats</h1>
+                                <button class="popular-products">Popular Recipies &nbsp; &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-[40%] w-full mt-5 md:mt-0 flex flex-col">
-                  <label for="fname">Last Name</label>
-                  <input class="w-full bg-transparent py-3 outline-none border-b border-[black]" type="text"
-                    name="lname">
+            </section>
+
+            <!-- Page 2 -->
+            <section class="top-products">
+                <div class="top-products-container">
+                    <div class="heading">
+                        <h1>Delicious</h1>
+                    </div>
+
+                    <div class="products">
+                        <div class="product">
+                            <img src="./src/assets/images/pexels-freestockpro-5554607.jpg" alt="">
+                        </div>
+                    </div>
+
+            </section>
+
+
+            <section>
+                <div class="small-products">
+                    <div class="heading">
+                        <h1>Popular</h1>
+                    </div>
+                    <div class="products">
+                        <div class="product">
+                            <img src="./src/assets/images/pexels-brigitte-tohm-36757-350343.jpg" alt="">
+                        </div>
+                        <div class="product">
+                            <img src="./src/assets/images/pexels-polina-tankilevitch-5419208.jpg" alt="">
+                        </div>
+                        <div class="product">
+                            <img src="./src/assets/images/pexels-rajesh-tp-749235-1633525.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="products">
+                        <div class="product">
+                            <img src="./src/assets/images/pexels-valeriya-1199957.jpg" alt="">
+                        </div>
+                        <div class="product">
+                            <img src="./src/assets/images/eiliv-aceron-pu6b4yIlQF4-unsplash.jpg" alt="">
+                        </div>
+                        <div class="product">
+                            <img src="./src/assets/images/eiliv-aceron-mAQZ3X_8_l0-unsplash.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </section>
 
-              <div class="w-full mt-5 flex md:justify-between  items-center md:flex-row flex-col">
-                <div class="md:w-[40%] w-full flex flex-col">
-                  <label for="fname">Email</label>
-                  <input class="w-full bg-transparent py-3  border-b outline-none border-[black]" type="text"
-                    name="email">
+
+            <section>
+                <div class="contact">
+                    <div class="heading">
+                        <h1>Contact</h1>
+                    </div>
+
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <!-- Phone Icon  -->
+                            <i class="ri-phone-line"></i>
+                            <p>+1 (234) 567-8910</p>
+                        </div>
+                        <div class="contact-info">
+                            <!-- Email Icon  -->
+                            <i class="ri-mail-line"></i>
+                            <p>info@deliplus.com</p>
+                        </div>
+                        <div class="contact-info">
+                            <!-- Phone Icon  -->
+                            <i class="ri-map-pin-line"></i>
+                            <p>308 Main Street, New York</p>
+                        </div>
+                    </div>
+            </section>
+
+            <footer>
+                <div class="footer-content">
+                    <p>© 2025 Deli Plus. All rights reserved | Designed and developed by <span
+                            class="timestech">Timestech
+                            Softwares</span></p>
                 </div>
-                <div class="md:w-[40%] w-full mt-5 flex flex-col">
-                  <label for="fname">Subject</label>
-                  <input class="w-full bg-transparent py-3  border-b outline-none border-[black]" type="text"
-                    name="subject">
-                </div>
-              </div>
-              <div class="mt-5">
-                <label for="message">Leave a Message</label>
-                <textarea name="message" class="bg-transparent w-full outline-none border-b border-black" id="message"
-                  cols="3" rows="3"></textarea>
-              </div>
-              <div class="w-full flex justify-center md:justify-end mt-10 md:mt-5">
-                <button
-                  class="border font-[primary] font-thin border-[#DD2803] hover:bg-white duration-200 hover:text-[#DD2803] px-12 py-3 uppercase bg-[#DD2803] text-white">Send</button>
-              </div>
-            </form>
-          </div>
-        </div>
+            </footer>
+        </main>
 
-
-        <div class="md:w-[40%] h-full bg-[#F9F2EA]">
-          <div class="w-full">
-            <div class="w-full px-12 py-10 flex justify-center md:flex md:justify-start">
-              <h1 class="text-4xl  font-[secondary] uppercase font-extrabold">WE'RE OPEN</h1>
-            </div>
-
-            <div class="md:w-[70%] w-full px-12 font-[primary]">
-              <p class="font-[primary]text-left text-lg"><span class="mr-3 text-xl"><i
-                    class="ri-calendar-fill"></i></span>Monday-Saturday : 11am-10pm </p>
-            </div>
-
-            <div class="md:w-[70%] w-full mt-10 px-12 font-[primary] flex gap-4 items-center">
-              <i class="ri-map-pin-2-fill text-xl"></i>
-              <p class="text-lg">388 Washington Rd, Sayreville, NJ 08872, USA</p>
-            </div>
-
-            <div class="md:w-[70%] w-full mt-10 px-12 font-[primary]">
-              <div class="flex items-center gap-4">
-                <i class="ri-phone-fill"></i>
-                <p class="font-[primary] text-xl">123-456-7890 </p>
-              </div>
-
-              <div class="flex items-center mt-10 gap-4">
-                <i class="ri-mail-fill"></i>
-                <p class="font-[primary] text-xl">info@mysite.com</p>
-              </div>
-
-            </div>
-
-            <div class="md:w-[70%] w-full mt-10 px-12 flex items-center md:items-start flex-col">
-              <h1 class="text-4xl text-left font-[secondary] uppercase font-extrabold">FOLLOW US</h1>
-              <div class="flex justify-start mt-7 gap-5">
-                <div class="w-10 h-10 rounded-full bg-[#DD2803] text-white flex justify-center items-center">
-                  <i class="ri-facebook-circle-fill text-3xl"></i>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#DD2803] text-white flex justify-center items-center">
-                  <i class="ri-instagram-fill text-3xl"></i>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#DD2803] text-white flex justify-center items-center">
-                  <i class="ri-twitter-fill text-3xl"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER SECTION -->
-    <section class="w-screen text-[#DD2803] bg-[#DD2803] h-[10vh] flex items-center justify-center px-16">
-      <p class="text-center text-white font-[primary]">
-        © 2024 All Rights Reserved by Deli Plus | Designed & Developed by <span class="text-white"><a class="font-[primary] font-bold"
-            href="https://timestechsoftwares.com">Timestech Softwares</a></span>
-      </p>
-    </section>
-
-  </main>
-  <script type="module" src="/src/scripts/main.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
