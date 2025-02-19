@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deli Plus</title>
+    <!-- favicon  -->
+    <link rel="icon" type="image/x-icon" href="./src/assets/images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +14,18 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-
+    <!-- Preload Images  -->
+    <link rel="preload" href="./src/assets/images/bg_sandwich.jpg" as="image">
+    <link rel="preload" href="./src/assets/images/white-texture.jpg" as="image">
+    <link rel="preload" href="./src/assets/images/popular/burger.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/1.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/2.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/3.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/4.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/5.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/6.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/7.webp" as="image">
+    <link rel="preload" href="./src/assets/images/popular/8.webp" as="image">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -34,115 +47,63 @@
         </div>
     </div>
 
+    <!-- Click To Top Button -->
     <a href="#home" class="click-to-top">
-            <i class="ri-arrow-up-line"></i>
+        <i class="ri-arrow-up-line"></i>
     </a>
 
+    <!-- Loader -->
     <div class="loader">
         <img src="./src/assets/images/logo.svg" alt="">
         <div class="line"></div>
     </div>
 
-        <main>
-            <!-- Page 1 -->
-            <section id="home" class="home-section">
-                <div class="home-content">
-                    <div class="background">
-                        <img src="./src/assets/images/bg_sandwich.jpg" alt="background">
-                    </div>
-                    <div class="foreground">
-                        <div class="content">
-                            <div class="content-left">
-                                <p>Delicious Cafe</p>
-                                <h1>Sweet Treats</h1>
-                                <h1>Perfact Eats</h1>
-                                <button class="popular-products">Popular Recipies &nbsp; &rarr;</button>
-                            </div>
+    <!-- Main Section  -->
+    <main>
+        <!-- Page 1 -->
+        <section id="home" class="home-section">
+            <div class="home-content">
+                <div class="background">
+                    <img src="./src/assets/images/bg_sandwich.jpg" alt="background">
+                </div>
+                <div class="foreground">
+                    <div class="content">
+                        <div class="content-left">
+                            <p>Delicious Cafe</p>
+                            <h1>Sweet Treats</h1>
+                            <h1>Perfact Eats</h1>
+                            <button class="popular-products">Popular Recipies &nbsp; &rarr;</button>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Page 2 -->
-            <section class="top-products">
-                <div class="top-products-container">
-                    <div class="heading">
-                        <h1>Delicious</h1>
-                    </div>
+        <!-- Page 2 -->
+        <section class="top-products">
+            <div class="top-products-container">
+                <div class="heading">
+                    <h1>Delicious</h1>
+                </div>
 
-                    <div class="products">
-                        <div class="product">
-                            <img src="./src/assets/images/pexels-freestockpro-5554607.jpg" alt="">
-                        </div>
-                    </div>
-
-            </section>
-
-
-            <section>
-                <div class="small-products">
-                    <div class="heading">
-                        <h1>Popular</h1>
-                    </div>
-                    <div class="products">
-                        <div class="product">
-                            <img src="./src/assets/images/pexels-brigitte-tohm-36757-350343.jpg" alt="">
-                        </div>
-                        <div class="product">
-                            <img src="./src/assets/images/pexels-polina-tankilevitch-5419208.jpg" alt="">
-                        </div>
-                        <div class="product">
-                            <img src="./src/assets/images/pexels-rajesh-tp-749235-1633525.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="products">
-                        <div class="product">
-                            <img src="./src/assets/images/pexels-valeriya-1199957.jpg" alt="">
-                        </div>
-                        <div class="product">
-                            <img src="./src/assets/images/eiliv-aceron-pu6b4yIlQF4-unsplash.jpg" alt="">
-                        </div>
-                        <div class="product">
-                            <img src="./src/assets/images/eiliv-aceron-mAQZ3X_8_l0-unsplash.jpg" alt="">
-                        </div>
+                <div class="products">
+                    <div class="product">
+                        <img src="./src/assets/images/popular/burger.webp" alt="">
                     </div>
                 </div>
-            </section>
+
+        </section>
+
+        
 
 
-            <section>
-                <div class="contact">
-                    <div class="heading">
-                        <h1>Contact</h1>
-                    </div>
-
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <!-- Phone Icon  -->
-                            <i class="ri-phone-line"></i>
-                            <p>+1 (234) 567-8910</p>
-                        </div>
-                        <div class="contact-info">
-                            <!-- Email Icon  -->
-                            <i class="ri-mail-line"></i>
-                            <p>info@deliplus.com</p>
-                        </div>
-                        <div class="contact-info">
-                            <!-- Phone Icon  -->
-                            <i class="ri-map-pin-line"></i>
-                            <p>308 Main Street, New York</p>
-                        </div>
-                    </div>
-            </section>
-
-            <footer>
-                <div class="footer-content">
-                    <p>© 2025 Deli Plus. All rights reserved | Designed and developed by <span
-                            class="timestech">Timestech
-                            Softwares</span></p>
-                </div>
-            </footer>
-        </main>
+        <footer>
+            <div class="footer-content">
+                <p>© 2025 Deli Plus. All rights reserved | Designed and developed by <span class="timestech">Timestech
+                        Softwares</span></p>
+            </div>
+        </footer>
+    </main>
 
     <script src="./index.js"></script>
 </body>
