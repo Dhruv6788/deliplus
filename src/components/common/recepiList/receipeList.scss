@@ -1,0 +1,57 @@
+.receipe-list{
+ padding: 20px;
+ position: sticky;
+
+ .heading{
+    padding: 10px;
+    
+    h1 {
+        font-size: 40px;
+        color: #f36969;
+        font-weight: 600;
+    }
+ }
+}
+
+.receipe-list-container {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+
+    .receipe-item {
+        padding: 10px;
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        td {
+            padding: 10px;
+            transition: all .5s;
+        }
+
+        td:nth-child(1) {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td:nth-child(2) {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        // odd child have background color
+       
+        // even child have background color
+        &:nth-child(odd) {
+            color: wheat;
+            background-color: #f36969;
+        }
+
+    }
+
+}
+

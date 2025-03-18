@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+.hero-contact {
+    background: url("/menu_bg1.jpg") center center / cover no-repeat;
+}
+
+// Contact.scss
+
+.contact-container {
+  // Ensure Material Icons work properly
+  .material-icons {
+    font-family: 'Material Icons';
+    font-size: 24px;
+  }
+
+  // Smooth transitions
+  a {
+    transition: color 0.2s ease;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .text-5xl {
+      font-size: 2.5rem;
+    }
+    
+    .text-7xl {
+      font-size: 3.5rem;
+    }
+  }
+}

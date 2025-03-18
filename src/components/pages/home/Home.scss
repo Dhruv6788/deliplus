@@ -1,0 +1,66 @@
+.home-container {
+  background: url("/bg_sandwich.jpg") center center / cover no-repeat;
+  overflow-x: hidden;
+}
+
+.temp {
+    color: rgba(255, 255, 255, 0.771);
+}
+
+.home-foreground {
+  position: relative;
+  left: 0;
+  top: 15%;
+  width: 100%;
+  z-index: 1;
+
+  .content {
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    top: 10%;
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-cover {
+    width: 70%;
+    position: relative;
+  }
+
+  p {
+    color: wheat;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    font-style: italic;
+    left: 0;
+    top: 0;
+  }
+
+  h1 {
+    color: white;
+    font-size: 80px;
+    font-weight: 800;
+    font-style: italic;
+    font-family: "Sansita Swashed";
+  }
+
+  button {
+    margin-top: 40px;
+    padding: 10px 30px;
+    background: var(--logo-primary-color);
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.889);
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: rgb(200, 27, 27);
+    outline: #000;
+    color: wheat;
+  }
+}
