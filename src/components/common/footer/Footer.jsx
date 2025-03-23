@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-black h-[400px] w-screen text-white">
-      <h4 className="text-center mt-2">Made with <i class="ri-heart-3-line"></i> By <Link to='https://timestechsoftwares.com/' className="text-[red]">Timestech Softwares</Link></h4>
+    <div className="bg-black h-[100px] w-screen text-white">
+        {/* Footer  */}
+        <div className="flex justify-center items-center h-full">
+          <h5 className="text-sm text-center">Copyright &copy; 2025 Deli Plus | Design and Developed by <Link target="_blank" to="https://timestechsoftwares.com">Timestech Softwares</Link></h5>
+        </div>
     </div>
   );
 };

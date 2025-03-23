@@ -15,10 +15,10 @@ const About = () => {
   return (
     <div className="w-screen bg-[white]">
       <div className="menu-heading h-[400px] flex flex-col justify-center items-center">
-        <h1 className="text-white menu-header-text text-8xl font-light">
+        <h1 className="text-white menu-header-text text-7xl lg:text-8xl font-light">
           Gallery
         </h1>
-        <p className="text-gray-300 text-center text-lg md:text-xl max-w-2xl">
+        <p className="text-gray-300 w-[90%] mt-3 text-center text-lg md:text-xl max-w-2xl">
           Explore our collection of stunning dishes and memorable moments
           captured at our restaurant.
         </p>

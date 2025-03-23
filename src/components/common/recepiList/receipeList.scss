@@ -5,11 +5,11 @@
  .heading{
     padding: 10px;
     
-    h1 {
-        font-size: 40px;
-        color: #f36969;
-        font-weight: 600;
-    }
+    // h1 {
+    //     font-size: 40px;
+    //     color: #f36969;
+    //     font-weight: 600;
+    // }
  }
 }
 
@@ -31,6 +31,8 @@
         td {
             padding: 10px;
             transition: all .5s;
+            display: flex;
+            align-items: center;
         }
 
         td:nth-child(1) {
@@ -39,7 +41,8 @@
         }
 
         td:nth-child(2) {
-            text-align: right;
+            width: 20%;
+            text-align: right;  
             font-weight: 600;
         }
 

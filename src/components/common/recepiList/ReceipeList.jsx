@@ -1,26 +1,51 @@
 import React from "react";
-import './receipeList.scss'
+// import './receipeList.scss'
+import { recipeList } from "../../../constants/dumpData";
+import { useNavigate } from "react-router-dom";
 const ReceipeList = ({ data }) => {
-  const {name, image, items} = data[0]
-  return <div className="receipe-list">
-    <div className="heading">
-      <h1>{name}</h1>
-    </div>
-    <div className="receipe-list-container">
-      {items.map((item) => (
-        <div className="receipe-item" key={item.id}>
-          {/*  Receipie with price Table  */}
-          <table>
-            <tr>
-              <td>{item.name}</td>
-              <td>{`$ ${item.price}`}</td>
-            </tr>
-          </table>
+  const navigateTo = useNavigate();
+  const { name, image, items } = data[0];
+  const changeCategory = (link) => {
+    navigateTo(`/menu/${link}`);
+  };
+  return (
+    <div className="lg:w-screen overflow-x-hidden md:w-[80vw]  bg-black">
+      <div className="flex justify-center items-center mt-10 mb-10 lg:hidden">
+        <select
+          onChange={(e) => changeCategory(e.target.value)}
+          className="w-[80%] h-12 px-5 bg-[red] text-white rounded-md"
+        >
+          {recipeList &&
+            recipeList.map((item, index) => {
+              return (
+                <option key={index} value={item.link}>
+                  {item.name}
+                </option>
+              );
+            })}
+        </select>
+      </div>
+      <div className="p-5">
+        <h1 className="text-3xl text-[red] font-semibold">{name}</h1>
+      </div>
 
-        </div>
-      ))}
+      <div className="w-screen">
+        {items?.map((item, index) => (
+          <div className="receipe-item" key={index}>
+            {/*  Receipie with price Table  */}
+            <table>
+              <tr className="w-screen lg:w-[80vw] flex justify-between px-8">
+                <td className="w-[60%] lg:w-full text-white py-3 text-left font-bold ">
+                  {item.name}
+                </td>
+                <td className="w-[20%] lg:w-[20%] text-[red] py-3 text-center font-bold">{`$ ${item.price}`}</td>
+              </tr>
+            </table>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default ReceipeList;
