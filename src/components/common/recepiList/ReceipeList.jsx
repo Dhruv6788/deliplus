@@ -25,16 +25,16 @@ const ReceipeList = ({ data }) => {
             })}
         </select>
       </div>
-      <div className="p-5">
-        <h1 className="text-3xl text-[red] font-semibold">{name}</h1>
-      </div>
+      {/* <div className="p-5">
+        <h1 className="text-3xl text-[red]">{name}</h1>
+      </div> */}
 
-      <div className="w-screen">
+      <div className="w-screen mt-20">
         {items?.map((item, index) => (
           <div className="receipe-item" key={index}>
             {/*  Receipie with price Table  */}
             <table>
-              <tr className="w-screen lg:w-[80vw] flex justify-between px-8">
+              <tr className="w-screen lg:w-[80vw] flex justify-between px-8 border-b border-[#ffffff6c]">
                 <td className="w-[60%] lg:w-full text-white py-3 text-left font-bold ">
                   {item.name}
                 </td>

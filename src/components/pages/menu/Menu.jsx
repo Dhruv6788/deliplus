@@ -32,7 +32,7 @@ const Menu = () => {
             ))}
           </ul>
         </div>
-        <div className="lg:w-[80%] w-screen">
+        <div className="lg:w-[80%] w-screen overflow-x-hidden">
           <Outlet />
         </div>
       </div>

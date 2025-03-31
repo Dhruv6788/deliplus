@@ -1,142 +1,92 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Home.scss";
 import Footer from "../../common/footer";
+import "./Home.scss";
 
 const Home = () => {
   return (
-    <div className="w-screen reative bg-black overflow-x-hidden">
-      <div className="w-full h-screen home-container">
-        <div className="home-foreground relative top-[50px]">
-          <div className="content translate-[8vw] lg:translate-[7vw]">
-            <div className="content-cover">
-              <p className="text-[wheat] font-bold italic text-2xl">
-                #Delicious Cafe
-              </p>
-              <h1 className="text-5xl lg:text-8xl lg:font-semibold text-white font-bold italic font-[Poppins] ">
-                Sweet Treats
-              </h1>
-              <h1 className="text-5xl lg:text-8xl lg:font-semibold text-white font-bold italic font-[Poppins] ">
-                Perfact Eats
-              </h1>
-            </div>
-            <div className="content-button mt-16">
-              <Link
-                to="/menu"
-                className="px-10 py-3 rounded-full hover:bg-[red] hover:border hover:text-[white] bg-[wheat]"
-              >
-               Delicious Menu 
-              </Link>
-            </div>
+    <div className="w-screen overflow-x-hidden">
+      <div className="w-full h-full relative">
+        <div className="absolute hidden md:block w-[300px] h-[300px] bg-white overflow-hidden right-[10%] top-[100px]">
+          <img src="/food_03.jpg" className="w-full h-full" alt="Food Image" />
+        </div>
+        <div className="bg-[#f14d4d] w-full py-20">
+          <div className="tagline  relative top-[20%] left-[10%]">
+            <h1 className="text-white text-xl md:text-3xl font-light italic font-[font1]">
+              #Delicious Cafe
+            </h1>
+            <h1 className="tegline-subtext tracking-wider  text-white text-5xl md:text-7xl font-extrabold  font-[font2]">
+              Sweet Treats
+            </h1>
+            <h1 className="tegline-subtext tracking-wider  text-white text-5xl md:text-7xl font-extrabold font-[font2]">
+              Perfact Eats
+            </h1>
           </div>
         </div>
-      </div>
 
-      <div className="w-screen bg-[wheat] flex lg:h-[600px] flex-wrap">
-        <div className="w-full lg:w-[30vw] h-screen p-10 bg-[wheat] flex flex-col justify-center gap-10 items-center">
-          <h1 className="text-center text-5xl font-bold mt-20 text-[black]">
-            Welcome
-          </h1>
-          <p className="text-center w-full lg:w-[80%] mt-5 font-light text-lg text-black ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            repellat, temporibus debitis molestias rem perspiciatis sunt quo aut
-            accusamus consequuntur vel sed recusandae corrupti ipsam non placeat
-            deleniti. Cupiditate quaerat dolores perferendis tempore ullam!
+
+        <div className="about px-20 w-full mt-40">
+          <p className="text-[#f14d4d] text-center text-2xl md:text-4xl font-light font-[font1]">
+            We are a family-owned business that has been serving delicious food
+            for over 20 years. Our mission is to provide our customers with a
+            warm and welcoming atmosphere where they can enjoy a variety of
+            delicious dishes made with the freshest ingredients.
           </p>
-          <Link
-            to={"/menu"}
-            className="mt-5 border px-20 py-4 duration-300 hover:bg-[red] hover:border hover:text-[white] bg-[wheat]"
-          >
-            Menu
-          </Link>
         </div>
-        <div className="w-full lg:w-[70vw] h-[50%] lg:h-full bg-gray-200">
-          <img
-            src="/food_02.jpg"
-            className="object-cover w-full h-full"
-            alt=""
-          />
-        </div>
-      </div>
 
-      <div className="w-screen overflow-hidden bg-[wheat] flex flex-wrap">
-        <div className="w-full lg:w-[30vw] h-screen p-10 bg-[wheat] flex flex-col justify-center gap-10 items-center">
-          <h1 className="text-center text-5xl font-bold mt-20 text-[black]">
-            Gallery
+        {/* Gallery  */}
+        <div className="heading py-10 px-20 w-full mt-10">
+          <h1 className="text-[#f14d4d] text-center text-5xl md:text-[12vw] font-extrabold font-[font2]">
+            Delicious Dishes
           </h1>
-          <p className="text-center w-full lg:w-[80%] mt-5 font-light text-lg text-black ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            repellat, temporibus debitis molestias rem perspiciatis sunt quo aut
-            accusamus consequuntur vel sed recusandae corrupti ipsam non placeat
-            deleniti. Cupiditate quaerat dolores perferendis tempore ullam!
-          </p>
-
-          <Link
-            to={"/about"}
-            className="mt-5 border px-20 py-4 duration-300 hover:bg-[red] hover:border hover:text-[white] bg-[wheat]"
-          >
-            View More
-          </Link>
         </div>
-
-        <div className="w-full h-[300px] lg:w-[70vw] bg-gray-200 border-t-4 border-[#ffffff] border-r-4 duration-300 border-b-4">
-          <img
-            src="/images/IMG_0843.webp"
-            className="object-cover w-full h-full hover:brightness-75 duration-100"
-            alt=""
-          />
-
-          <img
-            src="/images/IMG_0848.webp"
-            className="object-cover mt-2 w-full h-full hover:brightness-75 duration-100"
-            alt=""
-          />
-
-          <img
-            src="/images/IMG_0849.webp"
-            className="object-cover mt-2 w-full h-full hover:brightness-75 duration-100"
-            alt=""
-          />
-          <img
-            src="/images/IMG_0850.webp"
-            className="object-cover mt-2 w-full h-full hover:brightness-75 duration-100"
-            alt=""
-          />
-
-          <img
-            src="/images/IMG_0856.webp"
-            className="object-cover mt-2 w-full h-full hover:brightness-75 duration-100"
-            alt=""
-          />
-        </div>
-      </div>
-
-      {/* Visit Us  */}
-      <div className="w-screen overflow-hidden bg-[wheat] flex flex-wrap">
-        <div className="w-full h-screen p-10 bg-[wheat] flex flex-col justify-start gap-10 items-center">
-          <h1 className="text-center text-5xl mb-20 font-bold mt-20 text-[black]">
-            Visit Us
-          </h1>
-
-          {/* Address  */}
-          <div className="constainer w-screen flex flex-col gap-3 items-center">
-            <div className="box w-full h-[50vh] flex flex-col items-center">
-              <h2 className="text-black font-light text-center text-xl w-[80%]">
-                388 Washington Rd,
-                <br /> Sayreville, NJ 08872,
-                <br /> United States
-              </h2>
-              <div className="divider mt-10 h-[1px] opacity-50 w-[80%] bg-black "></div>
-              <h2 className="text-black mt-10 font-light text-center text-xl w-[80%]">
-                354 Main St Sayreville,
-                <br /> Sayreville, NJ 08872,
-                <br /> United States
-              </h2>
-            </div>
+        <div className="gallery px-10 w-full mt-10 ">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="col-span-2 md:col-span-1 gallery-images">
+              <img
+                src="/food_01.jpg"
+                className="w-full h-full"
+                alt="Food Image"
+              />
+            </div>  
+            <div className="col-span-2 md:col-span-1">
+              <img
+                src="/food_02.jpg"
+                className="w-full h-full"
+                alt="Food Image"
+              />
+            </div>  
+            <div className="col-span-2 md:col-span-1">
+              <img
+                src="/food_03.jpg"
+                className="w-full h-full"
+                alt="Food Image"
+              />
+            </div>  
+            <div className="col-span-2 md:col-span-1">
+              <img
+                src="/food_04.jpg"
+                className="w-full h-full"
+                alt="Food Image"
+              />
+            </div>  
+            <div className="col-span-2 md:col-span-1">
+              <img
+                src="/food_05.webp"
+                className="w-full h-full"
+                alt="Food Image"
+              />
+            </div>  
+            <div className="col-span-2 md:col-span-1">
+              <img
+                src="/food_06.jpg"
+                className="w-full h-full"
+                alt="Food Image"
+              />
+            </div>  
           </div>
         </div>
+        
       </div>
-
       <Footer />
     </div>
   );
