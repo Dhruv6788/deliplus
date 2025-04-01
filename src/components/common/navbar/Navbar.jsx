@@ -48,26 +48,26 @@ const Navbar = () => {
       <div className="hidden md:flex h-full items-center justify-end md:gap-6 lg:gap-10">
         <Link
           to="/"
-          className=" text-black hover:text-red-800 font-extralight tracking-wider text-sm md:text-base"
+          className=" text-black font-[font2] hover:text-red-800 font-medium tracking-wider text-sm md:text-base"
         >
           Home
         </Link>
         <Link
           to="/menu"
-          className=" text-black hover:text-red-800 font-extralight tracking-wider text-sm md:text-base"
+          className=" text-black font-[font2] hover:text-red-800 font-medium tracking-wider text-sm md:text-base"
         >
           Menu
         </Link>
         <Link
           to="/about"
-          className=" text-black hover:text-red-800 font-extralight tracking-wider text-sm md:text-base"
+          className=" text-black font-[font2] hover:text-red-800 font-medium tracking-wider text-sm md:text-base"
         >
           Gallery
         </Link>
 
         <Link
           to="/contact"
-          className=" text-black hover:text-red-800 font-extralight tracking-wider text-sm md:text-base"
+          className=" text-black font-[font2] hover:text-red-800 font-medium tracking-wider text-sm md:text-base"
         >
           Contact
         </Link>

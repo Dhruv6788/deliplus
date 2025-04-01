@@ -9,11 +9,11 @@ const ReceipeList = ({ data }) => {
     navigateTo(`/menu/${link}`);
   };
   return (
-    <div className="lg:w-screen overflow-x-hidden md:w-[80vw]  bg-black">
+    <div className="lg:w-screen overflow-x-hidden md:w-[80vw]  bg-white">
       <div className="flex justify-center items-center mt-10 mb-10 lg:hidden">
         <select
           onChange={(e) => changeCategory(e.target.value)}
-          className="w-[80%] h-12 px-5 bg-[red] text-white rounded-md"
+          className="w-[80%] h-12 px-5 bg-[red] text-black rounded-md"
         >
           {recipeList &&
             recipeList.map((item, index) => {
