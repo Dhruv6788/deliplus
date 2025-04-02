@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { openingHours } from "../home/Home";
 import "./About.scss";
+import Footer from "../../common/footer";
 
 const About = () => {
   const [images, setImages] = useState([]);
+  const today = new Date().toLocaleString("en-US", { weekday: "long" });
 
   useEffect(() => {
     const newImages = [];
-    for (let i = 43; i <= 60; i++) {
+    for (let i = 43; i <= 58; i++) {
       newImages.push(`/images/IMG_08${i}.webp`);
     }
     setImages(newImages);
@@ -15,13 +19,12 @@ const About = () => {
   return (
     <div className="w-screen min-h-screen bg-white">
       <div className="bg-[red] bg-cover bg-center h-[400px] md:h-[500px] lg:h-[500px] flex flex-col lg:flex-row justify-start items-start">
-        {/* Menu Description Section */}
         <div className="flex flex-col ml-6 md:ml-16 lg:ml-32 mt-10 md:mt-20 lg:mt-24 w-full max-w-[90%] md:max-w-[60%] lg:max-w-[40%]">
           <h3 className="font-[font1] text-white text-xl md:text-2xl lg:text-3xl tracking-wide">
-            Take a Look at
+            Take a Look at Our
           </h3>
           <h2 className="text-4xl md:text-5xl lg:text-7xl text-white font-bold font-[font2] mt-2 md:mt-4">
-            Gallery
+            Photo Gallery
           </h2>
           <p className="text-white text-sm md:text-base lg:text-lg font-medium font-[font2] mt-4 md:mt-6 leading-relaxed">
             The Deli Plus is an ideal place to socialize, impress your friends,
@@ -30,8 +33,6 @@ const About = () => {
             in Balsall Common.
           </p>
         </div>
-
-    
       </div>
 
       {/* Gallery Section */}
@@ -40,35 +41,105 @@ const About = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="group relative overflow-hidden border-[red] border-10"
             >
               <img
                 src={image}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-[400px] object-cover transition-transform duration-300 border-[white] border-20 group-hover:scale-105"
                 alt={`Gallery Image ${index + 1}`}
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
             </div>
           ))}
         </div>
       </div>
+      <div className="w-full py-10">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-10 px-4 md:px-10 max-w-[1200px] mx-auto">
+          {/* Locations */}
+          <div className="sections w-full md:w-1/3 py-4">
+            <div className="logo w-full flex justify-start">
+              <img
+                src="/logo.svg"
+                className="w-[30%] max-w-[150px]"
+                alt="Logo"
+              />
+            </div>
+            <div className="heading p-3">
+              <h1 className="font-[font2] font-bold text-2xl text-[red]">
+                Our Locations
+              </h1>
+              <div className="w-full flex flex-col mt-4 gap-3">
+                <Link className="hover:text-[red] hover:-translate-y-1 transition-all duration-300 flex gap-3">
+                  <i className="ri-map-pin-fill"></i>
+                  <p>354 Main St, Sayreville, NJ 08872</p>
+                </Link>
+                <Link className="hover:text-[red] hover:-translate-y-1 transition-all duration-300 flex gap-3">
+                  <i className="ri-map-pin-fill"></i>
+                  <p>388 Washington Rd, Sayreville, NJ 08872</p>
+                </Link>
+              </div>
+            </div>
+          </div>
 
-      {/* Call to Action */}
-      <div className="bg-red-500 py-12 text-center">
-        <h2 className="text-white text-3xl md:text-4xl font-bold">
-          Visit Us Today!
-        </h2>
-        <p className="text-gray-200 mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-          Come experience the flavors and ambiance that make our restaurant
-          special.
-        </p>
-        <a
-          href="/contact"
-          className="mt-6 inline-block bg-transparent text-white border border-white py-2 px-6 rounded-md hover:bg-white hover:text-red-500 transition-all duration-300"
-        >
-          Contact Us
-        </a>
+          {/* Quick Links */}
+          <div className="sections w-full md:w-1/3 py-4">
+            <div className="heading p-3">
+              <h1 className="font-[font2] font-bold text-2xl text-[red]">
+                Quick Links
+              </h1>
+            </div>
+            <div className="w-full flex flex-col p-5 gap-3">
+              <Link
+                to="/home"
+                className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+              >
+                Home
+              </Link>
+              <Link
+                to="/menu"
+                className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+              >
+                Menu
+              </Link>
+              <Link
+                to="/about"
+                className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/contact"
+                className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          {/* Opening Hours */}
+          <div className="sections w-full md:w-1/3 py-4">
+            <div className="heading p-3">
+              <h1 className="font-[font2] font-bold text-2xl text-[red]">
+                Opening Hours
+              </h1>
+            </div>
+            <div className="w-full flex flex-col p-5 gap-2">
+              {openingHours.map((item) => (
+                <p
+                  key={item.day}
+                  className={`p-2 transition-all duration-300 ${
+                    item.day === today
+                      ? "bg-[url(/red_bg.jpg)] bg-cover bg-center bg-no-repeat text-white hover:scale-105"
+                      : "hover:text-[red] hover:scale-105"
+                  }`}
+                >
+                  {item.day} {item.hours}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };
