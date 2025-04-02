@@ -106,16 +106,17 @@ const Home = () => {
         alt="Ambiance Image"
       />
     </div>
+ 
     <div className="col-span-1 group">
       <img
-        src="/images/IMG_0861.webp"
+        src="/images/IMG_0844.webp"
         className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
         alt="Ambiance Image"
       />
     </div>
     <div className="col-span-1 group">
       <img
-        src="/images/IMG_0844.webp"
+        src="/images/IMG_0852.webp"
         className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
         alt="Ambiance Image"
       />
