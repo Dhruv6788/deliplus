@@ -13,6 +13,7 @@
     "@babel/preset-react": "^7.26.3",
     "@tailwindcss/postcss": "^4.0.14",
     "@tailwindcss/vite": "^4.0.14",
+    "gsap": "^3.12.7",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

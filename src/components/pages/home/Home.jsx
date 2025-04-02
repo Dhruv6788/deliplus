@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Footer from "../../common/footer";
 import { Link } from "react-router-dom";
 import { memo } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Home.scss";
-const openingHours = [
+
+gsap.registerPlugin(ScrollTrigger);
+
+export const openingHours = [
   { day: "Monday", hours: "09:00am - 06:00pm" },
   { day: "Tuesday", hours: "09:00am - 06:00pm" },
   { day: "Wednesday", hours: "09:00am - 06:00pm" },
@@ -12,30 +17,77 @@ const openingHours = [
   { day: "Saturday", hours: "09:00am - 06:00pm" },
   { day: "Sunday", hours: "09:00am - 06:00pm" },
 ];
+
 const Home = () => {
   const today = new Date().toLocaleString("en-US", { weekday: "long" });
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const galleryHeadingRef = useRef(null);
+  const galleryRef = useRef(null);
+  const newGalleryHeadingRef = useRef(null); // New ref for the new gallery heading
+  const newGalleryRef = useRef(null);
+  const ctaRef = useRef(null);
+
+  useEffect(() => {
+    // Hero Section Animation
+    gsap.from(heroRef.current.children, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power3.out",
+    });
+
+    // About Section Animation
+    gsap.from(aboutRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      scrollTrigger: {
+        trigger: aboutRef.current,
+        start: "top 80%",
+      },
+    });
+
+    // Gallery Heading Animation
+    gsap.from(galleryHeadingRef.current, {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      scrollTrigger: {
+        trigger: galleryHeadingRef.current,
+        start: "top 80%",
+        once: true,
+      },
+    });
+  }, []);
+
   return (
-    <div className="w-screen overflow-x-hidden">
-      <div className="w-full h-full">
-        <div className="absolute hidden md:block w-[300px] h-[300px] bg-white overflow-hidden right-[10%] top-[100px]">
-          <img src="/food_07.jpg" className="w-full h-full" alt="Food Image" />
+    <div className="w-full min-h-screen overflow-x-hidden">
+      <div className="relative w-full h-full">
+        {/* Hero Image */}
+        <div className="absolute hidden md:block w-[300px] h-[300px] bg-white overflow-hidden right-[10%] top-[100px] z-10">
+          <img src="/food_07.jpg" className="w-full h-full object-cover" alt="Food Image" />
         </div>
-        <div className="bg-[url(/red_bg.jpg)] w-full py-20">
-          <div className="tagline  relative top-[20%] left-[10%]">
+
+        {/* Hero Section */}
+        <div className="bg-[red] w-full py-20 bg-cover bg-center">
+          <div ref={heroRef} className="tagline relative top-[20%] left-[10%] max-w-[80%]">
             <h1 className="text-white text-xl md:text-3xl font-light italic font-[font1]">
               #Delicious Cafe
             </h1>
-            <h1 className="tegline-subtext tracking-wider  text-white text-5xl md:text-7xl font-extrabold  font-[font2]">
+            <h1 className="tracking-wider text-white text-5xl md:text-7xl font-extrabold font-[font2]">
               Sweet Treats
             </h1>
-            <h1 className="tegline-subtext tracking-wider  text-white text-5xl md:text-7xl font-extrabold font-[font2]">
-              Perfact Eats
+            <h1 className="tracking-wider text-white text-5xl md:text-7xl font-extrabold font-[font2]">
+              Perfect Eats
             </h1>
           </div>
         </div>
 
-        <div className="about px-20 w-full mt-40">
-          <p className="text-[#f14d4d] text-center text-2xl md:text-4xl font-light font-[font1]">
+        {/* About Section */}
+        <div ref={aboutRef} className="about px-4 md:px-20 w-full mt-40">
+          <p className="text-[#f14d4d] text-center text-2xl md:text-4xl font-light font-[font1] max-w-4xl mx-auto">
             We are a family-owned business that has been serving delicious food
             for over 20 years. Our mission is to provide our customers with a
             warm and welcoming atmosphere where they can enjoy a variety of
@@ -43,72 +95,84 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Gallery  */}
-        <div className="heading py-10 px-20 w-full mt-10">
-          <h1 className="text-[#f14d4d] text-center text-5xl md:text-[12vw] font-extrabold font-[font2]">
-            Delicious Dishes
+        {/* Gallery Heading */}
+        <div className="heading py-10 px-4 md:px-20 w-full mt-10">
+          <h1
+            ref={galleryHeadingRef}
+            className="text-[#f14d4d] bg-[url(/red_bg.jpg)] bg-clip-text text-center text-6xl md:text-[12vw] font-extrabold font-[font2]"
+          >
+            Delicious <br /> Dishes
           </h1>
         </div>
 
-        <div className="gallery px-10 w-full mt-10 ">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="col-span-2 md:col-span-1 gallery-images">
-              <img
-                src="/food_01.jpg"
-                className="w-full h-full"
-                alt="Food Image"
-              />
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <img
-                src="/food_02.jpg"
-                className="w-full h-full"
-                alt="Food Image"
-              />
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <img
-                src="/food_03.jpg"
-                className="w-full h-full"
-                alt="Food Image"
-              />
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <img
-                src="/food_04.jpg"
-                className="w-full h-full"
-                alt="Food Image"
-              />
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <img
-                src="/food_05.webp"
-                className="w-full h-full"
-                alt="Food Image"
-              />
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <img
-                src="/food_06.jpg"
-                className="w-full h-full"
-                alt="Food Image"
-              />
-            </div>
+        {/* Gallery */}
+        <div className="gallery px-4 md:px-10 w-full mt-10">
+          <div
+            ref={galleryRef}
+            className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto"
+          >
+            {[1, 2, 3, 4, 5, 6].map((num) => (
+              <div key={num} className="col-span-1 group">
+                <img
+                  src={`/food_0${num}.${num === 5 ? "webp" : "jpg"}`}
+                  className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                  alt="Food Image"
+                />
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="gallery bg-[url('/food_08.jpg')] bg-cover bg-center bg-no-repeat mt-20 top-[100px] w-full h-[100vh] md:h-[70vh] flex justify-center items-center">
-          <div className="w-[70%] h-[70%] bg-[#ffffffee] flex flex-col justify-between py-20 items-center">
+
+        <div className="heading py-10 px-4 md:px-20 w-full mt-10">
+          <h1
+            // ref={newGalleryHeadingRef}
+            className="text-[#f14d4d] bg-[url(/red_bg.jpg)] bg-clip-text text-center text-6xl md:text-[12vw] font-extrabold font-[font2]"
+          >
+            Our Gallery
+          </h1>
+
+          <p className="text-[#f14d4d] mt-20 text-center text-2xl md:text-4xl font-light font-[font1] max-w-4xl mx-auto">
+            We are a family-owned business that has been serving delicious food
+            for over 20 years. Our mission is to provide our customers with a
+            warm and welcoming atmosphere where they can enjoy a variety of
+            delicious dishes made with the freshest ingredients.
+          </p>
+        </div>
+
+        <div className="new-gallery px-4 md:px-10 w-full mt-10">
+          <div
+            ref={newGalleryRef}
+            className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto"
+          >
+            {[842, 861, 844, , 845, 850, 856].map((num) => (
+              <div key={num} className="col-span-1 group">
+                <img
+                  src={`/images/IMG_0${num}.webp`} // Assuming new images for ambiance
+                  className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                  alt="Ambiance Image"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="gallery bg-[url('/food_08.jpg')] bg-cover bg-center bg-no-repeat mt-20 w-full min-h-[70vh] flex justify-center items-center">
+          <div
+            ref={ctaRef}
+            className="w-[90%] md:w-[70%] bg-[#ffffffee] flex flex-col justify-between py-10 md:py-20 items-center"
+          >
             <h1 className="text-[#f14d4d] text-center text-2xl md:text-[2vw] font-extrabold font-[font2]">
-              Your Perfact Food Destination
+              Your Perfect Food Destination
             </h1>
-            <p className="w-[60%] text-[#f14d4d] mt-3 text-center text-xl md:text-[1.5vw] font-light font-[font1]">
+            <p className="w-[90%] md:w-[60%] text-[#f14d4d] mt-3 text-center text-lg md:text-[1.5vw] font-light font-[font1]">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Inventore sit tempora sapiente eaque facere dignissimos
               consectetur minus iusto veniam possimus.
             </p>
             <Link
-              className="bg-[transparent] text-[red] border border-[red] py-2 px-6 mt-10 text-center text-lg md:text-[1vw] font-light font-[font2]"
+              className="bg-transparent text-[red] border border-[red] py-2 px-6 mt-10 text-center text-lg md:text-[1vw] font-light font-[font2] hover:bg-[red] hover:text-white transition-all duration-300"
               to="/menu"
             >
               View Menu
@@ -116,55 +180,69 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="w-full h-[45vw] py-10">
-          <div className="w-full h-full flex justify-between gap-10 px-10">
-            <div className="sections w-[100%] py-4">
+        {/* Footer Info */}
+        <div className="w-full py-10">
+          <div className="w-full flex flex-col md:flex-row justify-between gap-10 px-4 md:px-10 max-w-[1200px] mx-auto">
+            {/* Locations */}
+            <div className="sections w-full md:w-1/3 py-4">
               <div className="logo w-full flex justify-start">
-                <img src="/logo.svg" className="w-[30%]" alt="" />
+                <img src="/logo.svg" className="w-[30%] max-w-[150px]" alt="Logo" />
               </div>
               <div className="heading p-3">
                 <h1 className="font-[font2] font-bold text-2xl text-[red]">
                   Our Locations
                 </h1>
                 <div className="w-full flex flex-col mt-4 gap-3">
-                  <Link className="hover:text-[red] duration-300 flex gap-3">
-                    <i class="ri-map-pin-fill"></i>
-                    <p className="">354 Main St, Sayreville, NJ 08872</p>
+                  <Link className="hover:text-[red] hover:-translate-y-1 transition-all duration-300 flex gap-3">
+                    <i className="ri-map-pin-fill"></i>
+                    <p>354 Main St, Sayreville, NJ 08872</p>
                   </Link>
-                  <Link className="hover:text-[red] duration-300 flex gap-3">
-                    <i class="ri-map-pin-fill"></i>
-                    <p className="">388 Washington Rd, Sayreville, NJ 08872</p>
+                  <Link className="hover:text-[red] hover:-translate-y-1 transition-all duration-300 flex gap-3">
+                    <i className="ri-map-pin-fill"></i>
+                    <p>388 Washington Rd, Sayreville, NJ 08872</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="sections w-[100%] py-4">
+
+            {/* Quick Links */}
+            <div className="sections w-full md:w-1/3 py-4">
               <div className="heading p-3">
                 <h1 className="font-[font2] font-bold text-2xl text-[red]">
                   Quick Links
                 </h1>
               </div>
               <div className="w-full flex flex-col p-5 gap-3">
-                <Link to='/home' className="hover:text-[red] duration-300">Home</Link>
-                <Link to='/menu' className="hover:text-[red] duration-300">Menu</Link>
-                <Link to='/about' className="hover:text-[red] duration-300">Gallery</Link>
-                <Link to='/contact' className="hover:text-[red] duration-300">Contact</Link>
+                <Link to="/home" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                  Home
+                </Link>
+                <Link to="/menu" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                  Menu
+                </Link>
+                <Link to="/about" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                  Gallery
+                </Link>
+                <Link to="/contact" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                  Contact
+                </Link>
               </div>
             </div>
 
-            <div className="sections w-[100%] py-4">
+            {/* Opening Hours */}
+            <div className="sections w-full md:w-1/3 py-4">
               <div className="heading p-3">
                 <h1 className="font-[font2] font-bold text-2xl text-[red]">
                   Opening Hours
                 </h1>
               </div>
-
-              <div className="w-[80%] flex flex-col justify-center items-between p-5 gap-2">
+              <div className="w-full flex flex-col p-5 gap-2">
                 {openingHours.map((item) => (
                   <p
                     key={item.day}
-                    className={`hover:text-[red] duration-300 ml-4 p-2 ${
-                      item.day === today ? "bg-[url(/red_bg.jpg)] bg-cover bg-center bg-no-repeat text-white hover:text-white" : ""
+                    className={`p-2 transition-all duration-300 ${
+                      item.day === today
+                        ? "bg-[url(/red_bg.jpg)] bg-cover bg-center bg-no-repeat text-white hover:scale-105"
+                        : "hover:text-[red] hover:scale-105"
                     }`}
                   >
                     {item.day} {item.hours}
@@ -172,12 +250,10 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
-        <Footer />
-        
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,17 +1,34 @@
 import React from "react";
-import "./footer.scss";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
-    <div className="absolute md:relative lg:relative bottom-0 bg-black h-[100px] w-screen text-white">
-        <div className="flex justify-center items-center h-full">
-          <h5 className="text-md w-[80%] text-center">Copyright &copy; 2025 <Link onClick={scrollToTop} className="text-[red]">Deli Plus</Link> | Designed and Developed by <Link target="_blank" to="https://timestechsoftwares.com" className="text-[red]">Timestech Softwares</Link></h5>
-        </div>
-    </div>
+    <footer className="relative bg-black text-white w-full min-h-[100px] flex justify-center items-center py-5 mt-auto">
+      <div className="w-[90%] max-w-[1200px] text-center">
+        <p className="text-sm md:text-base leading-relaxed m-0 font-arial">
+          Copyright © 2025{" "}
+          <Link
+            onClick={scrollToTop}
+            to="/"
+            className="text-[#f14d4d] font-semibold hover:text-[#ff6666] hover:-translate-y-0.5 transition-all duration-300 focus:underline focus:outline-[#f14d4d] focus:outline-offset-2"
+          >
+            Deli Plus
+          </Link>{" "}
+          | Designed and Developed by{" "}
+          <Link
+            target="_blank"
+            to="https://timestechsoftwares.com"
+            className="text-[#f14d4d] font-semibold hover:text-[#ff6666] hover:-translate-y-0.5 transition-all duration-300 focus:underline focus:outline-[#f14d4d] focus:outline-offset-2"
+          >
+            Timestech Softwares
+          </Link>
+        </p>
+      </div>
+    </footer>
   );
 };
 
