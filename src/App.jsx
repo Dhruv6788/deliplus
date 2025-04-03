@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { routesConfig } from "./app/routes/routes";
+import { routesConfig } from './app/routes/routes';
 import "./App.css";
 
 const router = createBrowserRouter(routesConfig); // Create router outside the component
