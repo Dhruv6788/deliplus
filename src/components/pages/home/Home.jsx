@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from "react";
 import Footer from "../../common/footer";
 import { Link } from "react-router-dom";
 import { memo } from "react";
 import "./Home.scss";
-
 
 export const openingHours = [
   { day: "Monday", hours: "09:00am - 06:00pm" },
@@ -18,14 +16,16 @@ export const openingHours = [
 const Home = () => {
   const today = new Date().toLocaleString("en-US", { weekday: "long" });
 
-
-
   return (
     <div className="w-full min-h-screen overflow-x-hidden">
       <div className="relative w-full h-full">
         {/* Hero Image */}
         <div className="absolute hidden md:block w-[300px] h-[300px] bg-white overflow-hidden right-[10%] top-[100px] z-10">
-          <img src="/food_07.jpg" className="w-full h-full object-cover" alt="Food Image" />
+          <img
+            src="/food_07.jpg"
+            className="w-full h-full object-cover"
+            alt="Food Image"
+          />
         </div>
 
         {/* Hero Section */}
@@ -44,7 +44,7 @@ const Home = () => {
         </div>
 
         {/* About Section */}
-        <div  className="about px-4 md:px-20 w-full mt-40">
+        <div className="about px-4 md:px-20 w-full mt-40">
           <p className="text-[#f14d4d] text-center text-2xl md:text-4xl font-light font-[font1] max-w-4xl mx-auto">
             We are a family-owned business that has been serving delicious food
             for over 20 years. Our mission is to provide our customers with a
@@ -55,19 +55,14 @@ const Home = () => {
 
         {/* Gallery Heading */}
         <div className="heading py-10 px-4 md:px-20 w-full mt-10">
-          <h1
-            
-            className="text-[#f14d4d] bg-[url(/red_bg.jpg)] bg-clip-text text-center text-6xl md:text-[12vw] font-extrabold font-[font2]"
-          >
+          <h1 className="text-[#f14d4d] bg-[url(/red_bg.jpg)] bg-clip-text text-center text-6xl md:text-[12vw] font-extrabold font-[font2]">
             Delicious <br /> Dishes
           </h1>
         </div>
 
         {/* Gallery */}
         <div className="gallery px-4 md:px-10 w-full mt-10">
-          <div
-            className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
             {[1, 2, 3, 4, 5, 6].map((num) => (
               <div key={num} className="col-span-1 group">
                 <img
@@ -80,12 +75,8 @@ const Home = () => {
           </div>
         </div>
 
-
         <div className="heading py-10 px-4 md:px-20 w-full mt-10">
-          <h1
-          
-            className="text-[#f14d4d] bg-[url(/red_bg.jpg)] bg-clip-text text-center text-6xl md:text-[12vw] font-extrabold font-[font2]"
-          >
+          <h1 className="text-[#f14d4d] bg-[url(/red_bg.jpg)] bg-clip-text text-center text-6xl md:text-[12vw] font-extrabold font-[font2]">
             Our Gallery
           </h1>
 
@@ -98,59 +89,56 @@ const Home = () => {
         </div>
 
         <div className="new-gallery px-4 md:px-10 w-full mt-10">
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
-    <div className="col-span-1 group">
-      <img
-        src="/images/IMG_0842.webp"
-        className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-        alt="Ambiance Image"
-      />
-    </div>
- 
-    <div className="col-span-1 group">
-      <img
-        src="/images/IMG_0844.webp"
-        className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-        alt="Ambiance Image"
-      />
-    </div>
-    <div className="col-span-1 group">
-      <img
-        src="/images/IMG_0852.webp"
-        className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-        alt="Ambiance Image"
-      />
-    </div>
-    <div className="col-span-1 group">
-      <img
-        src="/images/IMG_0845.webp"
-        className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-        alt="Ambiance Image"
-      />
-    </div>
-    <div className="col-span-1 group">
-      <img
-        src="/images/IMG_0850.webp"
-        className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-        alt="Ambiance Image"
-      />
-    </div>
-    <div className="col-span-1 group">
-      <img
-        src="/images/IMG_0856.webp"
-        className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-        alt="Ambiance Image"
-      />
-    </div>
-  </div>
-</div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
+            <div className="col-span-1 group">
+              <img
+                src="/images/IMG_0842.webp"
+                className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
 
+            <div className="col-span-1 group">
+              <img
+                src="/images/IMG_0844.webp"
+                className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/images/IMG_0852.webp"
+                className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/images/IMG_0845.webp"
+                className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/images/IMG_0850.webp"
+                className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/images/IMG_0856.webp"
+                className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Call to Action */}
         <div className="gallery bg-[url('/food_08.jpg')] bg-cover bg-center bg-no-repeat mt-20 w-full min-h-[70vh] flex justify-center items-center">
-          <div
-            className="w-[90%] md:w-[70%] bg-[#ffffffee] flex flex-col justify-between py-10 md:py-20 items-center"
-          >
+          <div className="w-[90%] md:w-[70%] bg-[#ffffffee] flex flex-col justify-between py-10 md:py-20 items-center">
             <h1 className="text-[#f14d4d] text-center text-2xl md:text-[2vw] font-extrabold font-[font2]">
               Your Perfect Food Destination
             </h1>
@@ -174,7 +162,11 @@ const Home = () => {
             {/* Locations */}
             <div className="sections w-full md:w-1/3 py-4">
               <div className="logo w-full flex justify-start">
-                <img src="/logo.svg" className="w-[30%] max-w-[150px]" alt="Logo" />
+                <img
+                  src="/logo.svg"
+                  className="w-[30%] max-w-[150px]"
+                  alt="Logo"
+                />
               </div>
               <div className="heading p-3">
                 <h1 className="font-[font2] font-bold text-2xl text-[red]">
@@ -201,16 +193,28 @@ const Home = () => {
                 </h1>
               </div>
               <div className="w-full flex flex-col p-5 gap-3">
-                <Link to="/home" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                <Link
+                  to="/home"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
                   Home
                 </Link>
-                <Link to="/menu" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                <Link
+                  to="/menu"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
                   Menu
                 </Link>
-                <Link to="/about" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                <Link
+                  to="/about"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
                   Gallery
                 </Link>
-                <Link to="/contact" className="hover:text-[red] hover:-translate-y-1 transition-all duration-300">
+                <Link
+                  to="/contact"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
                   Contact
                 </Link>
               </div>

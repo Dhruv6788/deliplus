@@ -21,53 +21,13 @@ export const routesConfig = [
       {
         path : '/menu', 
         element : <Menu /> ,
-        errorElement : <ErrorBoundary />, 
         children : [
           {
-            index : true, 
-            element :<Navigate to="/menu/sandwiches" />
-          },
-          {
-            path : 'sandwiches', 
-            element : <ReceipeList data= {[recipeList[0]]} />
-          },
-          {
-            path : 'platters', 
-            element : <ReceipeList data= {[recipeList[1]]} />
-          },
-          {
-            path : 'meats', 
-            element : <ReceipeList data= {[recipeList[2]]} />
-          },
-          {
-            path : 'subs', 
-            element : <ReceipeList data= {[recipeList[3]]} />
-          },
-          {
-            path : 'omlettes', 
-            element : <ReceipeList data= {[recipeList[4]]} />
-          },
-          {
-            path : 'salads', 
-            element : <ReceipeList data= {[recipeList[5]]} />
-          },
-          {
-            path : 'wraps', 
-            element : <ReceipeList data= {[recipeList[6]]} />
-          },
-          {
-            path : 'specialty-combos', 
-            element : <ReceipeList data= {[recipeList[7]]} />
-          },
-          {
-            path : 'cold-sandwiches', 
-            element : <ReceipeList data= {[recipeList[8]]} />
-          },
-          {
-            path : 'cakes', 
-            element : <ReceipeList data= {[recipeList[9]]} />
-          },
-        ]
+            index : true,
+            element : <Menu />
+          }
+        ],
+        errorElement : <ErrorBoundary />
       },
       {
         path : '/about', 
