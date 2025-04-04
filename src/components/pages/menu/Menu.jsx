@@ -8,6 +8,7 @@ const Menu = () => {
   const row2 = recipeList.slice(3, 6);
   const row3 = recipeList.slice(6, 10);
   const today = new Date().toLocaleString("en-US", { weekday: "long" });
+  
   return (
     <div className="w-screen bg-white">
       <div className="bg-[red] bg-cover bg-center h-[400px] md:h-[500px] lg:h-[500px] flex flex-col lg:flex-row justify-start items-start">
