@@ -61,17 +61,52 @@ const Home = () => {
         </div>
 
         {/* Gallery */}
-        <div className="gallery px-4 md:px-10 w-full mt-10">
+        
+        <div className="new-gallery px-4 md:px-10 w-full mt-10">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="col-span-1 group">
-                <img
-                  src={`/food_0${num}.${num === 5 ? "webp" : "jpg"}`}
-                  className="w-full h-[40vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
-                  alt="Food Image"
-                />
-              </div>
-            ))}
+            <div className="col-span-1 group">
+              <img
+                src="/egg_sandwich.jpg"
+                className="w-full h-[50vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+
+            <div className="col-span-1 group">
+              <img
+                src="/wraps.jpg"
+                className="w-full h-[50vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/Tuna_melt.jpg"
+                className="w-full h-[50vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/pancake.jpg"
+                className="w-full h-[50vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/hashbrowns.jpg"
+                className="w-full h-[50vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
+            <div className="col-span-1 group">
+              <img
+                src="/browns.jpg"
+                className="w-full h-[50vh] object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                alt="Ambiance Image"
+              />
+            </div>
           </div>
         </div>
 

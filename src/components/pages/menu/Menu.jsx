@@ -136,74 +136,93 @@ const Menu = () => {
         </div>
       </div>
 
-      <div className="w-full h-[45vw] py-10">
-        <div className="w-full h-full flex justify-between gap-10 px-10">
-          <div className="sections w-[100%] py-4">
-            <div className="logo w-full flex justify-start">
-              <img src="/logo.svg" className="w-[30%]" alt="" />
+      <div className="w-full py-10">
+          <div className="w-full flex flex-col md:flex-row justify-between gap-10 px-4 md:px-10 max-w-[1200px] mx-auto">
+            {/* Locations */}
+            <div className="sections w-full md:w-1/3 py-4">
+              <div className="logo w-full flex justify-start">
+                <img
+                  src="/logo.svg"
+                  className="w-[30%] max-w-[150px]"
+                  alt="Logo"
+                />
+              </div>
+              <div className="heading p-3">
+                <h1 className="font-[font2] font-bold text-2xl text-[red]">
+                  Our Locations
+                </h1>
+                <div className="w-full flex flex-col mt-4 gap-3">
+                  <Link className="hover:text-[red] hover:-translate-y-1 transition-all duration-300 flex gap-3">
+                    <i className="ri-map-pin-fill"></i>
+                    <p>354 Main St, Sayreville, NJ 08872</p>
+                  </Link>
+                  <Link className="hover:text-[red] hover:-translate-y-1 transition-all duration-300 flex gap-3">
+                    <i className="ri-map-pin-fill"></i>
+                    <p>388 Washington Rd, Sayreville, NJ 08872</p>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="heading p-3">
-              <h1 className="font-[font2] font-bold text-2xl text-[red]">
-                Our Locations
-              </h1>
-              <div className="w-full flex flex-col mt-4 gap-3">
-                <Link className="hover:text-[red] duration-300 flex gap-3">
-                  <i className="ri-map-pin-fill"></i>
-                  <p className="">354 Main St, Sayreville, NJ 08872</p>
+
+            {/* Quick Links */}
+            <div className="sections w-full md:w-1/3 py-4">
+              <div className="heading p-3">
+                <h1 className="font-[font2] font-bold text-2xl text-[red]">
+                  Quick Links
+                </h1>
+              </div>
+              <div className="w-full flex flex-col p-5 gap-3">
+                <Link
+                  to="/home"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
+                  Home
                 </Link>
-                <Link className="hover:text-[red] duration-300 flex gap-3">
-                  <i className="ri-map-pin-fill"></i>
-                  <p className="">388 Washington Rd, Sayreville, NJ 08872</p>
+                <Link
+                  to="/menu"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
+                  Menu
+                </Link>
+                <Link
+                  to="/about"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
+                  Gallery
+                </Link>
+                <Link
+                  to="/contact"
+                  className="hover:text-[red] hover:-translate-y-1 transition-all duration-300"
+                >
+                  Contact
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="sections w-[100%] py-4">
-            <div className="heading p-3">
-              <h1 className="font-[font2] font-bold text-2xl text-[red]">
-                Quick Links
-              </h1>
-            </div>
-            <div className="w-full flex flex-col p-5 gap-3">
-              <Link to="/home" className="hover:text-[red] duration-300">
-                Home
-              </Link>
-              <Link to="/menu" className="hover:text-[red] duration-300">
-                Menu
-              </Link>
-              <Link to="/about" className="hover:text-[red] duration-300">
-                Gallery
-              </Link>
-              <Link to="/contact" className="hover:text-[red] duration-300">
-                Contact
-              </Link>
-            </div>
-          </div>
 
-          <div className="sections w-[100%] py-4">
-            <div className="heading p-3">
-              <h1 className="font-[font2] font-bold text-2xl text-[red]">
-                Opening Hours
-              </h1>
-            </div>
-
-            <div className="w-[80%] flex flex-col justify-center items-between p-5 gap-2">
-              {openingHours.map((item) => (
-                <p
-                  key={item.day}
-                  className={`hover:text-[red] duration-300 ml-4 p-2 ${
-                    item.day === today
-                      ? "bg-[url(/red_bg.jpg)] bg-cover bg-center bg-no-repeat text-white hover:text-white"
-                      : ""
-                  }`}
-                >
-                  {item.day} {item.hours}
-                </p>
-              ))}
+            {/* Opening Hours */}
+            <div className="sections w-full md:w-1/3 py-4">
+              <div className="heading p-3">
+                <h1 className="font-[font2] font-bold text-2xl text-[red]">
+                  Opening Hours
+                </h1>
+              </div>
+              <div className="w-full flex flex-col p-5 gap-2">
+                {openingHours.map((item) => (
+                  <p
+                    key={item.day}
+                    className={`p-2 transition-all duration-300 ${
+                      item.day === today
+                        ? "bg-[url(/red_bg.jpg)] bg-cover bg-center bg-no-repeat text-white hover:scale-105"
+                        : "hover:text-[red] hover:scale-105"
+                    }`}
+                  >
+                    {item.day} {item.hours}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
       <Footer />
     </div>
   );
