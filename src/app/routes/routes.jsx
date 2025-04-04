@@ -17,7 +17,7 @@ export const routesConfig = [
         element: <Home />
       },
       {
-        path: "menu",  // No leading slash
+        path: "menu", 
         element: <Menu />,
         errorElement: <ErrorBoundary />
       },
@@ -26,7 +26,7 @@ export const routesConfig = [
         element: <About />
       }, 
       {
-        path: "contact", // Removed leading "/"
+        path: "contact",
         element: <Contact />
       }
     ]

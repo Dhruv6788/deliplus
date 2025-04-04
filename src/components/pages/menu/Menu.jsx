@@ -147,11 +147,11 @@ const Menu = () => {
               </h1>
               <div className="w-full flex flex-col mt-4 gap-3">
                 <Link className="hover:text-[red] duration-300 flex gap-3">
-                  <i class="ri-map-pin-fill"></i>
+                  <i className="ri-map-pin-fill"></i>
                   <p className="">354 Main St, Sayreville, NJ 08872</p>
                 </Link>
                 <Link className="hover:text-[red] duration-300 flex gap-3">
-                  <i class="ri-map-pin-fill"></i>
+                  <i className="ri-map-pin-fill"></i>
                   <p className="">388 Washington Rd, Sayreville, NJ 08872</p>
                 </Link>
               </div>
